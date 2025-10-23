@@ -1,4 +1,3 @@
-// ...existing code...
 #include <stdio.h>
 #include <string.h> /* for memcpy */
 #include <stdlib.h> /* for malloc, free */
