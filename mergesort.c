@@ -37,15 +37,47 @@ void my_mergesort(int left, int right){
     merge(left, mid, mid + 1, right);
 }
 
-/* basic parallel entry: here we just call serial mergesort so test program can
- * exercise serial behaviour (use cutoff==0 with test-mergesort to get pure serial).
- * A fuller parallel implementation can be added later. */
-// ...existing code...
+/* basic parallel entry: spawn threads up to cutoff levels; otherwise do serial.
+ * Policy: arguments allocated with buildArgs(...) are freed by the thread that
+ * receives them (i.e. this function frees 'a' when a->level > 0). The initial
+ * level-0 arg is owned by the test harness and must not be freed here. */
 void * parallel_mergesort(void *arg){
     struct argument *a = (struct argument *)arg;
     if (!a) return NULL;
-    my_mergesort(a->left, a->right);
-    /* only free if this arg was allocated for a spawned thread (level > 0) */
+
+    if (a->left >= a->right) {
+        if (a->level > 0) free(a);
+        return NULL;
+    }
+
+    /* If we've reached cutoff do serial sort */
+    if (a->level >= cutoff) {
+        my_mergesort(a->left, a->right);
+        if (a->level > 0) free(a);
+        return NULL;
+    }
+
+    int left = a->left;
+    int right = a->right;
+    int mid = left + (right - left) / 2;
+
+    /* create args for children */
+    struct argument *leftArg = buildArgs(left, mid, a->level + 1);
+    struct argument *rightArg = buildArgs(mid + 1, right, a->level + 1);
+
+    pthread_t t1, t2;
+
+    /* spawn both children (no detailed error handling here) */
+    pthread_create(&t1, NULL, parallel_mergesort, leftArg);
+    pthread_create(&t2, NULL, parallel_mergesort, rightArg);
+
+    /* wait for both to finish */
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+
+    /* merge results */
+    merge(left, mid, mid + 1, right);
+
     if (a->level > 0) free(a);
     return NULL;
 }
