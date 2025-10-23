@@ -6,10 +6,11 @@ README.template
 * Group name: Group 120
 ## Overview
 
-Concisely explain what the program does. If this exceeds a couple of
-sentences, you're going too far. Generally, you should be pulling this
-right from the project specification. We don't want you to just cut and
-paste, but paraphrase what is stated in the project specification.
+This project implements a parallel merge sort alogirthm using POSIX threads (pthreads)
+in C. The program sorts arrays of integers by recursively dividing the sorting task
+across multiple threads up to a specified cutoff level. Beyond the cutoff level, the
+algorithm falls back to serial merge sort to prevent thread overhead from degrading
+performance.
 
 ## Manifest
 
