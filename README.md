@@ -2,7 +2,11 @@
 
 ## Overview
 
-
+This project implements a parallel merge sort alogirthm using POSIX threads (pthreads)
+in C. The program sorts arrays of integers by recursively dividing the sorting task
+across multiple threads up to a specified cutoff level. Beyond the cutoff level, the
+algorithm falls back to serial merge sort to prevent thread overhead from degrading
+performance.
 
 ## Manifest
 
