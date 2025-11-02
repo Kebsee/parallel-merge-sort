@@ -1,0 +1,121 @@
+===============================================
+ Parallel Merge Sort Batch Run
+===============================================
+Date: Sun Nov  2 21:40:13 ACDT 2025
+Binary: ./test-mergesort
+Input size: 100000000
+Seed: 1234
+Repetitions: 3
+-----------------------------------------------
+
+>>> Cutoff = 0
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=0, seed=1234)
+Sorting 100000000 elements took 28.05 seconds.
+
+Run 2/3 (n=100000000, cutoff=0, seed=1234)
+Sorting 100000000 elements took 28.44 seconds.
+
+Run 3/3 (n=100000000, cutoff=0, seed=1234)
+Sorting 100000000 elements took 26.94 seconds.
+
+
+>>> Cutoff = 1
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=1, seed=1234)
+Sorting 100000000 elements took 13.41 seconds.
+
+Run 2/3 (n=100000000, cutoff=1, seed=1234)
+Sorting 100000000 elements took 14.50 seconds.
+
+Run 3/3 (n=100000000, cutoff=1, seed=1234)
+Sorting 100000000 elements took 14.94 seconds.
+
+
+>>> Cutoff = 2
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=2, seed=1234)
+Sorting 100000000 elements took 7.29 seconds.
+
+Run 2/3 (n=100000000, cutoff=2, seed=1234)
+Sorting 100000000 elements took 7.00 seconds.
+
+Run 3/3 (n=100000000, cutoff=2, seed=1234)
+Sorting 100000000 elements took 7.14 seconds.
+
+
+>>> Cutoff = 3
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=3, seed=1234)
+Sorting 100000000 elements took 5.31 seconds.
+
+Run 2/3 (n=100000000, cutoff=3, seed=1234)
+Sorting 100000000 elements took 4.59 seconds.
+
+Run 3/3 (n=100000000, cutoff=3, seed=1234)
+Sorting 100000000 elements took 5.28 seconds.
+
+
+>>> Cutoff = 4
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=4, seed=1234)
+Sorting 100000000 elements took 4.77 seconds.
+
+Run 2/3 (n=100000000, cutoff=4, seed=1234)
+Sorting 100000000 elements took 6.14 seconds.
+
+Run 3/3 (n=100000000, cutoff=4, seed=1234)
+Sorting 100000000 elements took 4.26 seconds.
+
+
+>>> Cutoff = 5
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=5, seed=1234)
+Sorting 100000000 elements took 4.82 seconds.
+
+Run 2/3 (n=100000000, cutoff=5, seed=1234)
+Sorting 100000000 elements took 4.10 seconds.
+
+Run 3/3 (n=100000000, cutoff=5, seed=1234)
+Sorting 100000000 elements took 4.53 seconds.
+
+
+>>> Cutoff = 6
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=6, seed=1234)
+Sorting 100000000 elements took 7.24 seconds.
+
+Run 2/3 (n=100000000, cutoff=6, seed=1234)
+Sorting 100000000 elements took 5.44 seconds.
+
+Run 3/3 (n=100000000, cutoff=6, seed=1234)
+Sorting 100000000 elements took 4.76 seconds.
+
+
+>>> Cutoff = 7
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=7, seed=1234)
+Sorting 100000000 elements took 4.94 seconds.
+
+Run 2/3 (n=100000000, cutoff=7, seed=1234)
+Sorting 100000000 elements took 4.85 seconds.
+
+Run 3/3 (n=100000000, cutoff=7, seed=1234)
+Sorting 100000000 elements took 4.97 seconds.
+
+
+>>> Cutoff = 8
+-----------------------------------------------
+Run 1/3 (n=100000000, cutoff=8, seed=1234)
+Sorting 100000000 elements took 5.06 seconds.
+
+Run 2/3 (n=100000000, cutoff=8, seed=1234)
+Sorting 100000000 elements took 4.83 seconds.
+
+Run 3/3 (n=100000000, cutoff=8, seed=1234)
+Sorting 100000000 elements took 5.39 seconds.
+
+===============================================
+✅ All runs complete.
+Log file saved to: ./logs/all_runs_20251102_214013.log
+===============================================

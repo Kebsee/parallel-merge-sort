@@ -80,6 +80,8 @@ void * parallel_mergesort(void *arg){
     int created1 = 0, created2 = 0;
     int rc;
 
+    // pthread returns 0 on success
+
     rc = pthread_create(&t1, NULL, parallel_mergesort, leftArg);
     if (rc == 0) {
         created1 = 1;
@@ -96,8 +98,8 @@ void * parallel_mergesort(void *arg){
         perror("pthread_create");
         parallel_mergesort(rightArg);
     }
-
-    if (created1) {
+    // if not 0
+    if (created1) { 
         if (pthread_join(t1, NULL) != 0) {
             perror("pthread_join");
             /* continue anyway to attempt merge */
